@@ -10,11 +10,11 @@ document.getElementById('transactionForm').addEventListener('submit', function (
 
 
     // task2: Retrieve 'payee', 'amount', and 'reason' values from form inputs using document.getElementById().
-   const payee = document.getElementById('payee').value.trim();
+    const payee = document.getElementById('payee').value.trim();
 
-   const amount = parseFloat(document.getElementById('amount').value);
+    const amount = parseFloat(document.getElementById('amount').value);
 
-   const reason = document.getElementById('reason').value.trim();
+    const reason = document.getElementById('reason').value.trim();
 
 
     if (payee === '' || amount <= 0 || isNaN(amount)) {
@@ -45,9 +45,9 @@ function addTransaction(payee, amount, reason) {
     // task3: Complete the 'newTransaction' object by replacing the placeholder values with appropriate data.
     const newTransaction = {
         id: id,
-        payee: '',
-        amount: '',
-        reason: ''
+        payee: payee,
+        amount: amount,
+        reason: reason
     };
 
 
