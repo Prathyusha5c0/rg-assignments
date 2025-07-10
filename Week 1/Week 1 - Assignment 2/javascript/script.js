@@ -5,7 +5,7 @@ let isEditing = false;
 let editingTransactionId = null;
 
 
-document.getElementById('transactionForm').addEventListener('submit', function (event) {
+document.getElementById('transactionForm').addEventListener('submit', async function (event) {
     event.preventDefault(); // Prevent default form submission
 
 
@@ -27,14 +27,14 @@ document.getElementById('transactionForm').addEventListener('submit', function (
         isEditing = false;
         editingTransactionId = null;
         document.querySelector('button[type="submit"]').textContent = 'Add Transaction';
-        updateTotalTransactionAmount();
+        await updateTotalTransactionAmount();
     } else {
         addTransaction(payee, amount, reason);
     }
 
     clearForm();
     updateTransactionTable();
-    updateTotalTransactionAmount();
+    await updateTotalTransactionAmount();
 });
 
 
@@ -81,7 +81,7 @@ function editTransaction(id) {
     }
 }
 
-function deleteTransaction(id) {
+async function deleteTransaction(id) {
 
     const index = transactions.findIndex(t => t.id === id);
 
@@ -90,7 +90,7 @@ function deleteTransaction(id) {
         transactions.splice(index, 1);
 
         updateTransactionTable();
-        updateTotalTransactionAmount();
+        await updateTotalTransactionAmount();
     }
 }
 // task7: Convert below function 'updateTotalTransactionAmount' to use async/await.
@@ -98,7 +98,7 @@ function deleteTransaction(id) {
  a. Convert the 'updateTotalTransactionAmount' function to an async function.
  b. Update all occurrences of 'updateTotalTransactionAmount' across the script to use await and ensure their calling functions are marked as async.
 */
-function updateTotalTransactionAmount() {
+async function updateTotalTransactionAmount() {
     let totalAmount = 0;
     transactions.forEach(transaction => {
         totalAmount += transaction.amount;
