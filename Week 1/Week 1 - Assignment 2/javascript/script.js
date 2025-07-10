@@ -1,5 +1,5 @@
 // task1: Complete the below statement to initialize the variable 'transactions' as an empty array.
-let transactions = '';
+let transactions = [];
 
 let isEditing = false;
 let editingTransactionId = null;
