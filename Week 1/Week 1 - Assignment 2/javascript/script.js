@@ -87,7 +87,7 @@ function deleteTransaction(id) {
 
     if (index !== -1) {
         // task6: Complete the below statement to remove a transaction from the 'transactions' array by the index value
-        transactions.splice();
+        transactions.splice(index, 1);
 
         updateTransactionTable();
         updateTotalTransactionAmount();
