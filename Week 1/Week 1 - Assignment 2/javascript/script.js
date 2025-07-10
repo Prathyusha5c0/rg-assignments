@@ -52,7 +52,7 @@ function addTransaction(payee, amount, reason) {
 
 
     // task4: Complete the below statement to add the 'newTransaction' object into the 'transactions' array using the 'push' method.
-    transactions.push();
+    transactions.push(newTransaction);
 
 }
 
