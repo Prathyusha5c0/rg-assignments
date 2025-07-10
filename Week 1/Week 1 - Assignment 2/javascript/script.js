@@ -58,7 +58,7 @@ function addTransaction(payee, amount, reason) {
 
 function updateTransaction(id, payee, amount, reason) {
     // task5: Complete the below statement to find the transaction object in the 'transactions' array that matches the provided 'id' parameter.
-    const transaction = '';
+    const transaction = transactions.find(t => t.id === id);
 
 
     if (transaction) {
